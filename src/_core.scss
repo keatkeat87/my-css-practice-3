@@ -1,0 +1,18 @@
+@use 'sass:list';
+
+@mixin generate-container(
+  $breakpoint-names,
+  $breakpoint-values,
+  $breakpoint-containers,
+  $breakpoint-name
+) {
+  max-width: 100%;
+
+  $breakpoint-index: list.index($breakpoint-names, $breakpoint-name);
+  $breakpoint-count: length($breakpoint-names);
+  @for $index from 1 through $breakpoint-count {
+    @media (min-width: list.nth($breakpoint-values, $index)) {
+      max-width: if($index < $breakpoint-index, 100%, list.nth($breakpoint-containers, $index));
+    }
+  }
+}
