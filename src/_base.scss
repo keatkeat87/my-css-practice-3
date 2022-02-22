@@ -1,6 +1,7 @@
 @use './variable' as *;
 @use './core';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@use './shared';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
 
 * {
   margin: 0;
@@ -10,8 +11,8 @@
 
 body,
 html {
-  font-family: Montserrat, 'sans-serif';
-  @include font('body');
+  font-family: 'Open Sans', sans-serif;
+  @include shared.font-size('body');
 }
 
 .container {

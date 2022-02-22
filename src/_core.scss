@@ -16,3 +16,18 @@
     }
   }
 }
+
+$BROWSER_BASE_PX: 16;
+@function font-scale($base-px, $scale, $level) {
+  $positive-level: math.abs($level);
+  $is-negative: $positive-level != $level;
+  $result: 1;
+  @for $index from 1 through $positive-level {
+    $result: if($is-negative, $result / $scale, $result * $scale);
+  }
+  @return #{$result * $base-px / $BROWSER_BASE_PX}rem;
+}
+
+@function px-to-rem($px) {
+  @return $px / $BROWSER_BASE_PX;
+}

@@ -1,46 +1,16 @@
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-base: 1.5rem;
-$spacing-lg: 2rem;
-$spacing-xl: 3rem;
-$spacing-2x1: 4rem;
+/* #region – Typography  */
+$font-scale: 1.25;
+$font-base-px-lg: 18;
+$font-accent: 'Montserrat', sans-serif;
+/* #region – End of Typography  */
 
-$border-thin: 0.125rem;
-$border-thick: 0.5rem;
+/* #region – Color */
+$color-primary: #fbb666;
+$color-secondary: #2F4858;
+$color-secondary-700: #0b202e: 
+/* #region – End of Color */
 
-$color-primary: crimson;
-$color-analogous1: #b248be;
-$color-analogous2: #da1280;
-$color-complementary1: #0093d5;
-$color-complementary2: #576ee6;
-$color-gray: #2f4858;
-
-$border-radius-card: 0.75rem;
-$border-radius-button: 0.5rem;
-
-@mixin font($type) {
-  @if $type == 'display' {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  } @else if $type == 'display-button' {
-    font-size: 1.25rem;
-    letter-spacing: 0.125rem;
-    text-transform: uppercase;
-  } @else if $type == 'title' {
-    font-size: 1.5rem;
-  } @else if $type == 'subtitle' {
-    font-size: 1.25rem;
-  } @else if $type == 'body' {
-    font-size: 1rem;
-  } @else if $type == 'button' {
-    font-size: 1rem;
-    letter-spacing: 0.125rem;
-    text-transform: uppercase;
-  } @else if $type == 'caption' {
-    font-size: 0.75rem;
-  }
-}
-
+/* #region – Breakpoint */
 $breakpoint-names: 'sm' 'md' 'lg' 'xl' '2xl';
 
 $breakpoint-sm: 576px;
@@ -57,3 +27,19 @@ $breakpoint-container-xl: 1140px;
 $breakpoint-container-2xl: 1320px;
 $breakpoint-containers: $breakpoint-container-sm $breakpoint-container-md $breakpoint-container-lg
   $breakpoint-container-xl $breakpoint-container-2xl;
+/* #region – End of Breakpoint */
+
+/* #region – Spacing */
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-base: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2x1: 4rem;
+
+$border-thin: 0.125rem;
+$border-thick: 0.5rem;
+
+$border-radius-card: 0.75rem;
+$border-radius-button: 0.5rem;
+/* #region – End of Spacing */
