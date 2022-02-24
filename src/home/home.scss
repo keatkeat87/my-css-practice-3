@@ -1,16 +1,19 @@
 @use '../variable' as *;
 @use '../shared';
 @use '../base';
-@import '../tailwind.scss';
+// @import '../tailwind.scss';
 
 #header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $color-secondary-500;
   color: white;
-  padding-left: $spacing-base * 2;
-  padding-right: $spacing-base;
+  padding: $spacing-sm $spacing-base $spacing-sm $spacing-base * 2;
 
   .logo {
     width: 100px;
@@ -86,51 +89,88 @@
   }
 }
 
-main {
-  background-color: $color-secondary-500;
+#hero-section {
   height: 100vh;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center center;
+
+  position: relative;
+  z-index: 0;
+  &::after {
+    content: '';
+    background-color: rgba($color: black, $alpha: 0.5);
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  color: white;
+
+  .container {
+    margin-inline: auto;
+    padding: $spacing-2x1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .content {
+      .title-overline {
+        @include shared.font-size('displayOverline');
+        display: inline-block;
+      }
+      .title-container {
+        margin-top: $spacing-base;
+
+        position: relative;
+        .design-bar {
+          background-color: $color-primary;
+          width: 0.5rem;
+          border-radius: calc(0.5rem / 2);
+
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: -$spacing-2x1;
+        }
+
+        .title {
+          font-family: $font-accent;
+          @include shared.font-size('display');
+          font-weight: bold;
+          line-height: 1;
+          span {
+            color: $color-primary;
+          }
+        }
+      }
+      .description {
+        margin-top: $spacing-base;
+        width: 60%;
+      }
+      .action-link {
+        display: inline-block;
+        margin-top: $spacing-lg;
+
+        background-color: $color-primary;
+        color: $color-secondary-700;
+        border-radius: $border-radius-button;
+
+        padding: $spacing-sm $spacing-xl;
+        @include shared.font-size('button');
+        text-transform: uppercase;
+
+        transition-property: background-color transform color;
+        transition: 0.4s ease;
+        &:hover {
+          transform: translateY(-1px);
+          background-color: $color-primary-400;
+          color: black;
+        }
+      }
+    }
+  }
 }
-
-// header {
-//   background-color: $color-secondary-500;
-//   color: white;
-
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding-left: $spacing-base * 2;
-//   padding-right: $spacing-base;
-
-//   .logo {
-//     img {
-//       width: 100px;
-//     }
-//   }
-
-//   .nav {
-//     display: flex;
-
-//     a,
-//     .menu {
-//       @include shared.font-size('button');
-//       display: inline-block;
-//       padding: $spacing-base;
-
-//       &.active {
-//         color: $color-primary;
-//       }
-
-//       &:hover {
-//         opacity: 0.7;
-//       }
-
-//       .material-icons {
-//         font-size: 18px;
-//       }
-//     }
-
-//     .menu {
-//       cursor: pointer;
-//     }
-//   }
-// }

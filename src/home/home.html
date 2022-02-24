@@ -8,16 +8,14 @@
   </head>
   <body>
     <header id="header">
-      <div>
-        <a href="/">
-          <img class="logo" src="../images/logo.svg" alt="Stooges Logo" />
-        </a>
-      </div>
+      <a href="/">
+        <img class="logo" src="../images/logo.svg" alt="Stooges Logo" />
+      </a>
       <nav>
         <ul class="nav">
-          <li><a class="nav-link active" href="/">Home</a></li>
+          <li><a class="nav-link" href="/">Home</a></li>
           <li><a class="nav-link" href="/about">About</a></li>
-          <li class="nav-menu-trigger">
+          <li class="nav-menu-trigger active">
             <span>Services</span>
             <span class="expand-more-icon material-icons">expand_more</span>
             <nav class="nav-menu">
@@ -26,7 +24,9 @@
                   <a class="nav-menu-link" href="/services/1">Shuttle and spotting services</a>
                 </li>
                 <li><a class="nav-menu-link" href="/services/2">Dedicated contract carriage</a></li>
-                <li><a class="nav-menu-link" href="/services/3">Dedicated contract carriage</a></li>
+                <li>
+                  <a class="nav-menu-link active" href="/services/3">Dedicated contract carriage</a>
+                </li>
                 <li><a class="nav-menu-link" href="/services/4">Dry van truckload</a></li>
               </ul>
             </nav>
@@ -37,7 +37,25 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section id="hero-section">
+        <div class="container">
+          <div class="content">
+            <span class="title-overline">Lorem ipsum dolor sit amet.</span>
+            <div class="title-container">
+              <div class="design-bar"></div>
+              <h1 class="title">We are a great</h1>
+              <h1 class="title"><span>trucking</span> company</h1>
+            </div>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa mollis quam adipiscing
+              fames nec. Non viverra etiam nulla pellentesque cursus facilisi nibh enim.
+            </p>
+            <a class="action-link" href="#">Discover more</a>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>

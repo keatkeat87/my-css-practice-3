@@ -1,7 +1,7 @@
 @use './variable' as *;
 @use './core';
 @use './shared';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 /* #region – Reset & Base Style */
@@ -29,6 +29,8 @@ ol {
 
 body {
   font-family: 'Open Sans', sans-serif;
+}
+p {
   @include shared.font-size('body');
 }
 
