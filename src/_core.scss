@@ -1,4 +1,5 @@
 @use 'sass:list';
+@use 'sass:math';
 
 @mixin generate-container(
   $breakpoint-names,
@@ -25,9 +26,17 @@ $BROWSER_BASE_PX: 16;
   @for $index from 1 through $positive-level {
     $result: if($is-negative, $result / $scale, $result * $scale);
   }
-  @return #{$result * $base-px / $BROWSER_BASE_PX}rem;
+  @return #{round-to(calc($result * $base-px / $BROWSER_BASE_PX), 3)}rem;
 }
 
 @function px-to-rem($px) {
-  @return $px / $BROWSER_BASE_PX;
+  @return calc($px / $BROWSER_BASE_PX);
+}
+
+@function round-to($value, $decimal-point: 0) {
+  $multiply: 1;
+  @for $index from 0 to $decimal-point {
+    $multiply: $multiply * 10;
+  }
+  @return calc(math.round($value * $multiply) / $multiply);
 }

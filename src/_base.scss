@@ -2,15 +2,32 @@
 @use './core';
 @use './shared';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+/* #region – Reset & Base Style */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body,
-html {
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+/* #endregion – End of Reset & Base Style */
+
+body {
   font-family: 'Open Sans', sans-serif;
   @include shared.font-size('body');
 }

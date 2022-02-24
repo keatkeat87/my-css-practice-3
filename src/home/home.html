@@ -7,6 +7,37 @@
     <title>My CSS Practice 3</title>
   </head>
   <body>
-    <h1>Hello World !!</h1>
+    <header id="header">
+      <div>
+        <a href="/">
+          <img class="logo" src="../images/logo.svg" alt="Stooges Logo" />
+        </a>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li><a class="nav-link active" href="/">Home</a></li>
+          <li><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-menu-trigger">
+            <span>Services</span>
+            <span class="expand-more-icon material-icons">expand_more</span>
+            <nav class="nav-menu">
+              <ul class="nav-menu-container">
+                <li>
+                  <a class="nav-menu-link" href="/services/1">Shuttle and spotting services</a>
+                </li>
+                <li><a class="nav-menu-link" href="/services/2">Dedicated contract carriage</a></li>
+                <li><a class="nav-menu-link" href="/services/3">Dedicated contract carriage</a></li>
+                <li><a class="nav-menu-link" href="/services/4">Dry van truckload</a></li>
+              </ul>
+            </nav>
+          </li>
+          <li><a class="nav-link" href="/careers">Careers</a></li>
+          <li><a class="nav-link" href="/blog">Blog</a></li>
+          <li><a class="nav-link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main></main>
+    <footer></footer>
   </body>
 </html>
