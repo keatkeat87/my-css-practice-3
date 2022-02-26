@@ -32,16 +32,18 @@ $breakpoint-containers: $breakpoint-container-sm $breakpoint-container-md $break
 /* #endregion – End of Breakpoint */
 
 /* #region – Spacing */
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-base: 1.5rem;
-$spacing-lg: 2rem;
-$spacing-xl: 3rem;
-$spacing-2x1: 4rem;
+$spacing-xs: 0.5rem; // 8
+$spacing-sm: 1rem; // 16
+$spacing-base: 1.5rem; // 24
+$spacing-lg: 2rem; // 32
+$spacing-xl: 3rem; // 48
+$spacing-2xl: 4rem; // 64
+$spacing-3xl: 8rem; // 128
 
-$border-thin: 0.125rem;
-$border-thick: 0.5rem;
+$border-thin: 0.125rem; // 2
+$border-thick: 0.5rem; // 8
 
-$border-radius-card: 0.75rem;
+$border-radius-card: 0.75rem; // 12
+$border-radius-section: 5rem; // 80
 $border-radius-button: 10rem; /* hacking way (both side over) */
 /* #endregion – End of Spacing */

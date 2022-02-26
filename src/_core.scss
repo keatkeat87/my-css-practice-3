@@ -24,7 +24,7 @@ $BROWSER_BASE_PX: 16;
   $is-negative: $positive-level != $level;
   $result: 1;
   @for $index from 1 through $positive-level {
-    $result: if($is-negative, $result / $scale, $result * $scale);
+    $result: if($is-negative, calc($result / $scale), $result * $scale);
   }
   @return #{round-to(calc($result * $base-px / $BROWSER_BASE_PX), 3)}rem;
 }

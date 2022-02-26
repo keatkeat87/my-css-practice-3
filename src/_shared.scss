@@ -9,7 +9,7 @@
   } @else if $type == 'headline1' {
     font-size: core.font-scale($base-px: $font-base-px-lg, $scale: $font-scale, $level: 4);
   } @else if $type == 'headline2' {
-    font-size: core.font-scale($base-px: $font-base-px-lg, $scale: $font-scale, $level: 3);
+    font-size: core.font-scale($base-px: $font-base-px-lg, $scale: $font-scale, $level: 2);
   } @else if $type == 'subhead1' {
     font-size: core.font-scale($base-px: $font-base-px-lg, $scale: $font-scale, $level: 1);
   } @else if $type == 'subhead2' {

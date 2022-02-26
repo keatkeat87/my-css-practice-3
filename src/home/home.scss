@@ -3,6 +3,52 @@
 @use '../base';
 // @import '../tailwind.scss';
 
+@mixin title-design-bar {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $color-primary;
+    width: 0.5rem;
+    height: 100%;
+    border-radius: calc(0.5rem / 2);
+    top: 0;
+    left: -$spacing-2xl;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  padding: $spacing-3xl 0;
+  // padding-left: $spacing-2xl;
+}
+
+@mixin more-info-link($button-size: 'big') {
+  $padding: if($button-size == 'small', $spacing-xs, $spacing-sm);
+  &::after {
+    content: '\e409';
+    font-family: 'Material Icons';
+    font-size: 1.5rem;
+    font-weight: normal;
+    vertical-align: middle;
+
+    display: inline-block;
+    padding: $padding;
+    border-radius: 50%;
+    background-color: rgba($color: $color-primary, $alpha: 0.6);
+    margin-left: $spacing-sm;
+
+    transition: background-color 0.4s ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    &::after {
+      background-color: rgba($color: $color-primary, $alpha: 1);
+    }
+  }
+}
+
 #header {
   position: fixed;
   left: 0;
@@ -93,7 +139,7 @@
   height: 100vh;
   background-image: url('../images/hero.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: 0 70%;
 
   position: relative;
   z-index: 0;
@@ -111,8 +157,6 @@
   color: white;
 
   .container {
-    margin-inline: auto;
-    padding: $spacing-2x1;
     height: 100%;
     display: flex;
     align-items: center;
@@ -122,34 +166,22 @@
         @include shared.font-size('displayOverline');
         display: inline-block;
       }
-      .title-container {
+      .title {
         margin-top: $spacing-base;
 
-        position: relative;
-        .design-bar {
-          background-color: $color-primary;
-          width: 0.5rem;
-          border-radius: calc(0.5rem / 2);
-
-          position: absolute;
-          height: 100%;
-          top: 0;
-          left: -$spacing-2x1;
+        font-family: $font-accent;
+        @include shared.font-size('display');
+        font-weight: bold;
+        line-height: 1;
+        span {
+          color: $color-primary;
         }
 
-        .title {
-          font-family: $font-accent;
-          @include shared.font-size('display');
-          font-weight: bold;
-          line-height: 1;
-          span {
-            color: $color-primary;
-          }
-        }
+        @include title-design-bar();
       }
       .description {
         margin-top: $spacing-base;
-        width: 60%;
+        max-width: 500px;
       }
       .action-link {
         display: inline-block;
@@ -169,6 +201,139 @@
           transform: translateY(-1px);
           background-color: $color-primary-400;
           color: black;
+        }
+      }
+    }
+
+    position: relative;
+    .design-pattern {
+      position: absolute;
+      top: 20%;
+      right: 15%;
+    }
+  }
+}
+
+#about-us-section {
+  .container {
+    .content {
+      display: flex;
+      .main-content {
+        width: 70%;
+        padding-right: $spacing-2xl;
+        padding-bottom: $spacing-lg;
+        .title {
+          @include shared.font-size('headline1');
+          font-family: $font-accent;
+          font-weight: 600;
+          @include title-design-bar();
+        }
+        .description {
+          margin-top: $spacing-base;
+        }
+        .more-info-link {
+          display: inline-block;
+          margin-top: $spacing-lg;
+
+          @include shared.font-size('caption');
+          font-weight: 700;
+
+          @include more-info-link();
+        }
+        .img {
+          margin-top: $spacing-base;
+
+          position: relative;
+          left: -$spacing-2xl;
+          max-width: calc(100% + $spacing-2xl);
+        }
+      }
+      .sub-content {
+        padding-left: $spacing-xl;
+        border-left: 1px solid black;
+        width: 30%;
+        align-self: flex-end;
+
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-xl;
+        .point {
+          .title {
+            @include shared.font-size('headline2');
+            font-family: $font-accent;
+
+            span {
+              @include shared.font-size('display');
+              font-weight: 100;
+              opacity: 0.4;
+            }
+          }
+          .description {
+            margin-top: $spacing-xs;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    position: relative;
+    .design-pattern {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+    }
+  }
+}
+
+#service-section {
+  background-image: url('../images/service.jpg');
+  background-size: cover;
+  background-position-x: 50%;
+  color: white;
+  border-top-left-radius: $border-radius-section;
+
+  .container {
+    .content {
+      .section-title {
+        @include shared.font-size('headline1');
+        font-family: $font-accent;
+        font-weight: 600;
+        @include title-design-bar();
+      }
+      .service-list {
+        margin-top: $spacing-base;
+        max-width: 60%;
+        .service {
+          padding: $spacing-xl 0;
+          border-bottom: 1px solid white;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          .left-content {
+            .text {
+              @include shared.font-size('headline2');
+              font-family: $font-accent;
+              font-weight: bold;
+              opacity: 0.3;
+            }
+          }
+          .right-content {
+            .service-title {
+              @include shared.font-size('headline2');
+              font-family: $font-accent;
+              font-weight: 600;
+            }
+            .description {
+              margin-top: $spacing-sm;
+              opacity: 0.7;
+            }
+            .read-more-link {
+              display: inline-block;
+              margin-top: $spacing-base;
+
+              @include shared.font-size('caption');
+              @include more-info-link($button-size: 'small');
+            }
+          }
         }
       }
     }
